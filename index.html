@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر سيلا - خيوط البروتين الذهبي</title>
+  <style>
+    body { font-family: Tahoma, sans-serif; margin:0; padding:0; background:#fffaf7; color:#333; line-height:1.6; }
+    header { background:#d4a373; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; }
+    section { padding:40px 20px; max-width:1000px; margin:auto; }
+    h2 { color:#222; border-right:5px solid #d4a373; padding-right:10px; }
+    .cover { text-align:center; }
+    .cover img { max-width:100%; border-radius:15px; margin-bottom:20px; }
+    .features, .testimonials, .faq, .guarantees { margin-top:40px; }
+    .card { background:#fff; padding:20px; border-radius:12px; margin:15px 0; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    form { background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); max-width:600px; margin:auto; }
+    form input, form select, form button { width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:8px; font-size:16px; }
+    form button { background:#d4a373; color:#fff; border:none; cursor:pointer; font-size:18px; }
+    form button:hover { background:#b07c4e; }
+    footer { background:#333; color:white; text-align:center; padding:20px; margin-top:40px; }
+    .testimonial-slider { position: relative; max-width: 700px; margin: auto; overflow: hidden; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .slides img { width: 100%; border-radius: 12px; }
+    .slider-buttons { text-align: center; margin-top: 15px; }
+    .slider-buttons button { background:#d4a373; border:none; padding:10px 15px; margin:0 5px; border-radius:6px; color:white; cursor:pointer; }
+    .slider-buttons button:hover { background:#b07c4e; }
+    .indicators { text-align:center; margin-top:10px; }
+    .indicators span { display:inline-block; width:12px; height:12px; margin:0 5px; background:#ccc; border-radius:50%; cursor:pointer; }
+    .indicators .active { background:#d4a373; }
+    #delivery-price { margin:10px 0; font-weight:bold; color:#d4a373; }
+  </style>
+</head>
+<body>
+
+<header>🛍️ متجر سيلا - خيوط البروتين الذهبي</header>
+
+<!-- قسم الغلاف -->
+<section class="cover">
+  <img src="images/product1.jpg" alt="المنتج 1">
+  <img src="images/product2.jpg" alt="المنتج 2">
+  <img src="images/product3.jpg" alt="المنتج 3">
+  <img src="images/product4.jpg" alt="المنتج 4">
+  <img src="images/product5.jpg" alt="المنتج 5">
+</section>
+
+<!-- قسم المميزات -->
+<section class="features">
+  <h2>✨ المميزات</h2>
+  <div class="cards">
+    <div class="card">اكتشفي جمالك الطبيعي - بشرة مشدودة ومظهر شبابي.<br><img src="images/product1.jpg" alt="مميزات المنتج"></div>
+    <div class="card">خفض التجاعيد - نعومة ملحوظة.<br><img src="images/product3.jpg" alt="مميزات المنتج"></div>
+    <div class="card">تجربة آمنة - بلا جراحة أو إبر.<br><img src="images/product2.jpg" alt="مميزات المنتج"></div>
+    <div class="card">نتائج سريعة ومذهلة.<br><img src="images/product4.jpg" alt="مميزات المنتج"></div>
+    <div class="card">مناسب لجميع أنواع البشرة.<br><img src="images/product5.jpg" alt="مميزات المنتج"></div>
+  </div>
+</section>
+
+<!-- قسم آراء الزبائن -->
+<section class="testimonials">
+  <h2>💬 آراء زبائننا</h2>
+  <div class="testimonial-slider" id="slider">
+    <div class="slides">
+      <img src="images/review1.jpg" alt="رأي زبون 1">
+      <img src="images/review2.jpg" alt="رأي زبون 2">
+      <img src="images/review3.jpg" alt="رأي زبون 3">
+      <img src="images/review4.jpg" alt="رأي زبون 4">
+    </div>
+  </div>
+  <div class="slider-buttons">
+    <button onclick="moveSlide(-1)">⟨</button>
+    <button onclick="moveSlide(1)">⟩</button>
+  </div>
+  <div class="indicators">
+    <span onclick="goToSlide(0)" class="active"></span>
+    <span onclick="goToSlide(1)"></span>
+    <span onclick="goToSlide(2)"></span>
+    <span onclick="goToSlide(3)"></span>
+  </div>
+</section>
+
+<!-- نموذج الطلب -->
+<section class="order">
+  <h2 style="text-align:center;">📋 نموذج الطلب</h2>
+  <form action="process-order.php" method="post">
+    <input type="text" name="fullname" placeholder="الاسم الكامل" required>
+    <input type="text" name="address" placeholder="العنوان" required>
+    <input type="tel" name="phone" placeholder="الهاتف" required>
+
+    <label for="state">اختر ولايتك:</label>
+    <select name="state" id="state" required>
+      <option value="">-- اختر ولايتك --</option>
+      <option>أدرار</option>
+      <option>الشلف</option>
+      <option>الأغواط</option>
+      <option>أم البواقي</option>
+      <option>باتنة</option>
+      <option>بجاية</option>
+      <option>بسكرة</option>
+      <option>بشار</option>
+      <option>البليدة</option>
+      <option>البويرة</option>
+      <option>تمنراست</option>
+      <option>تبسة</option>
+      <option>تلمسان</option>
+      <option>تيارت</option>
+      <option>تيزي وزو</option>
+      <option>الجزائر العاصمة</option>
+      <option>الجلفة</option>
+      <option>جيجل</option>
+      <option>سطيف</option>
+      <option>سعيدة</option>
+      <option>سكيكدة</option>
+      <option>سيدي بلعباس</option>
+      <option>عنابة</option>
+      <option>قالمة</option>
+      <option>قسنطينة</option>
+      <option>المدية</option>
+      <option>مستغانم</option>
+      <option>المسيلة</option>
+      <option>معسكر</option>
+      <option>ورقلة</option>
+      <option>وهران</option>
+      <option>البيض</option>
+      <option>إليزي</option>
+      <option>برج بوعريريج</option>
+      <option>بومرداس</option>
+      <option>الطارف</option>
+      <option>تندوف</option>
+      <option>تيسمسيلت</option>
+      <option>الوادي</option>
+      <option>خنشلة</option>
+      <option>سوق أهراس</option>
+      <option>تيبازة</option>
+      <option>ميلة</option>
+      <option>عين الدفلى</option>
+      <option>النعامة</option>
+      <option>عين تموشنت</option>
+      <option>غرداية</option>
+      <option>غليزان</option>
+      <option>تيميمون</option>
+      <option>أولاد جلال</option>
+      <option>برج باجي مختار</option>
+      <option>بني عباس</option>
+      <option>إن صالح</option>
+      <option>إن قزام</option>
+      <option>تقرت</option>
+      <option>جانت</option>
+      <option>المغير</option>
+      <option>المنيعة</option>
+    </select>
+
+    <div id="delivery-price">سعر التوصيل: --- دج</div>
+    <input type="hidden" name="delivery_price" id="delivery_price_input">
+    <input type="hidden" name="total_price" id="total_price_input">
+
+    <button type="submit" id="submit-btn">أكمل عملية الشراء – 6500 دج</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 متجر سيلا - جميع الحقوق محفوظة
+</footer>
+
+<script>
+  const productPrice = 6500;
+  const statePrices = {"أدرار":600,"الشلف":400,"الأغواط":500,"أم البواقي":400,"باتنة":400,"بجاية":400,"بسكرة":500,"بشار":600,"البليدة":350,"البويرة":400,"تمنراست":800,"تبسة":400,"تلمسان":400,"تيارت":400,"تيزي وزو":400,"الجزائر العاصمة":350,"الجلفة":500,"جيجل":400,"سطيف":400,"سعيدة":400,"سكيكدة":400,"سيدي بلعباس":400,"عنابة":400,"قالمة":400,"قسنطينة":400,"المدية":400,"مستغانم":400,"المسيلة":400,"معسكر":400,"ورقلة":500,"وهران":400,"البيض":400,"إليزي":600,"برج بوعريريج":400,"بومرداس":400,"الطارف":400,"تندوف":600,"تيسمسيلت":400,"الوادي":500,"خنشلة":400,"سوق أهراس":500,"تيبازة":400,"ميلة":400,"عين الدفلى":400,"النعامة":500,"عين تموشنت":400,"غرداية":500,"غليزان":400,"تيميمون":600,"أولاد جلال":300,"المنيعة":500};
+
+  const stateSelect = document.getElementById("state");
+  const deliveryPriceDiv = document.getElementById("delivery-price");
+  const submitBtn = document.getElementById("submit-btn");
+  const deliveryPriceInput = document.getElementById("delivery_price_input");
+  const totalPriceInput = document.getElementById("total_price_input");
+
+  stateSelect.addEventListener("change", function() {
+    const selected = stateSelect.value;
+    const delivery = statePrices[selected] || 0;
+    const total = productPrice + delivery;
+    deliveryPriceDiv.textContent = delivery ? "سعر التوصيل: " + delivery + " دج" : "سعر التوصيل: --- دج";
+    submitBtn.textContent = "أكمل عملية الشراء – " + total + " دج";
+    deliveryPriceInput.value = delivery;
+    totalPriceInput.value = total;
+  });
+</script>
+
+</body>
+</html>
